@@ -35,7 +35,7 @@ for username in "${!users[@]}"; do
     /usr/sbin/adduser $username docker
 
     # Установка стандартного пароля
-    echo "$username":11223344 | sudo chpasswd
+    echo "$username":<PASSWD> | sudo chpasswd
 
     # Добавление пользователя в группу sudo
     sudo usermod -aG sudo "$username"
